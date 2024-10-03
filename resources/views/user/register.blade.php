@@ -1,0 +1,279 @@
+@extends('layout')
+@section('title')
+    Register
+@endsection
+@section('body')
+    <style>
+body {
+    background-color: #f8f9fa;
+  
+}
+
+.card {
+    margin-top: 50px;
+    border-radius: 15px;
+    height:850px;
+    margin-right: -30px;
+    letter-spacing: -0.2px;
+text-rendering: optimizeLegibility;
+font-family: "Quicksand", sans-serif;
+line-height: 1.24;
+
+  
+}
+
+.card-header {
+    background-color: #ffffff;
+    color: #f9a826;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    padding-top:50px;
+}
+.card-body {
+padding: 15px; /* Tạo khoảng cách bên trong thẻ */
+margin: 30px; /* Tạo khoảng cách bên ngoài thẻ */
+ }
+
+.form-control {
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+    height: 50px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.form-control:hover {
+    border-color: #f9627d;
+    color: #007bff;
+    transform: scale(1.03);
+}
+
+.form-control:focus {
+    border-color: #f9a826;
+    color: #f9a826;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(249, 98, 125, 0.6);
+}
+
+.btn-primary {
+    background: rgb(255, 116, 56);
+    color: #fcfcff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    scale: 1.05;
+}
+
+.btn-primary:after {
+    border-radius: 22px;
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: -2px;
+    left: -2px;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(145deg, #f9a826, #f9627d);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover:after {
+    background: linear-gradient(145deg, #f9627d, #f9a826);
+}
+
+.btn-google {
+    background-color: #ffffff;
+    color: #757575;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 22px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.btn-google img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.btn-google:hover {
+    background-color: #f8f8f8;
+    border-color: #c2c2c2;
+}
+
+label {
+    color: #f9a826;
+}
+.image-container img {
+width: 100%;
+height: 850px;
+border-radius: 15px;
+margin-top: 50px;
+border-radius: 15px;
+}
+.quenPass{
+color :blue;
+margin-top:-15px;
+margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center" style="padding:60px">
+            <div class="col-md-10">
+                <div class="row">
+                    <!-- form -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                Đăng Ký
+                            </div>
+                            <div class="card-body">
+                                <form action="" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label
+                                            for="userName">User Name</label>
+                                        <input type="text"
+                                            class="form-control"
+                                            id="userName" name="name"
+                                            placeholder="Nhập tên tài khoản của bạn"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label
+                                            for="loginEmail">Email</label>
+                                        <input type="email"
+                                            class="form-control"
+                                            id="email" name="email"
+                                            placeholder="Nhập email của bạn"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label
+                                            for="phone">Phone</label>
+                                        <input type="phone"
+                                            class="form-control"
+                                            id="phone" name="phone"
+                                            placeholder="Nhập số điện thoai của bạn"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label
+                                            for="adddress">Địa chỉ </label>
+                                        <input type="text"
+                                            class="form-control"
+                                            id="address" name="address"
+                                            placeholder="Nhập tên tài khoản của bạn"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loginPassword">Mật
+                                            khẩu</label>
+                                        <input type="password"
+                                        class="form-control"
+                                            id="password" name="password"
+                                            placeholder="Nhập mật khẩu của bạn"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loginPassword">Xác nhận
+                                            mật khẩu</label>
+                                        <input type="password"
+                                            class="form-control"
+                                            id="confirmPassword" name="repassword"
+                                            placeholder="Nhập mật khẩu của bạn"
+                                            required>
+                                            @if (Session::has('message'))
+                                            <div class="alert alert-danger">
+                                                {{Session::get('message')}}
+                                            </div>
+                                            @php
+                                                Session::forget('message');
+                                            @endphp
+                                            @endif
+                                    </div>
+                                
+                                    <button type="submit"
+                                        class="btn btn-primary">Đăng
+                                        ký</button>
+                                    <button type="button" class="btn-google"
+                                        id="googleSignInBtn">
+                                        <img
+                                            src="{{ asset('assets/pethaven/public/img/google-icon.png')}}"
+                                            alt="Google Logo">Đăng nhập với
+                                        Google
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 image-container">
+                        <img
+                            src="{{ asset('assets/pethaven/public/img/anhnendangky.jpg')}}"
+                            alt="Dog Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const phone = document.getElementById('phone').value;
+            // Regex kiểm tra email hợp lệ
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Email không đúng định dạng.');
+                return;
+            }
+
+            // Regex kiểm tra mật khẩu ít nhất 6 ký tự, bao gồm ký tự đặc biệt, số và chữ hoa
+            const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+            if (!passwordPattern.test(password)) {
+                alert('Mật khẩu phải có ít nhất 6 ký tự, bao gồm ít nhất một ký tự đặc biệt, một chữ hoa và một số.');
+                return;
+            }
+
+            // Kiểm tra xác nhận mật khẩu khớp
+            if (password !== confirmPassword) {
+                alert('Mật khẩu xác nhận không khớp.');
+                return;
+            }
+
+            alert('Đăng ký thành công!');
+        });
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+@endsection

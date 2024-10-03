@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+            rel="stylesheet">
+        <style>
+        body {
+            padding-top: 20px;
+            text-rendering: optimizeLegibility;
+            font-family: "Quicksand", sans-serif;
+            line-height: 1.24;
+        }
+       
+        .contact-header h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            margin-left: 30%;
+            margin-right: 30%;
+            font-size: 50px;
+            font-weight: 400px;
+            padding-top:50px;
+        }
+
+        .contact-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+       
+
+        .map-container {
+            position: relative;
+            margin-top: 80px;
+            height: 400px;
+            width: 100%;
+        }
+        .map-embed {
+            flex-grow: 1; /* Chiếm toàn bộ không gian còn lại */
+            width: 100%; /* Đảm bảo chiều rộng là 100% */
+            border: none; /* Không có viền */
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .address-info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            margin-top: 50px;
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #6c757d;
+        }
+
+        .social-icons a:hover {
+            color: #495057;
+        }
+        .contact-info-box {
+            position: absolute;
+            top: -10%;
+            right: 5%;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            z-index: 10;
+        }
+        .contact-info-box h4 {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #f37321;
+        }
+        .contact-info-box p {
+            margin: 5px 0;
+        }
+        .contact-info-box i {
+            color: #f37321;
+            margin-right: 10px;
+        }
+
+        /* Biểu tượng liên hệ */
+        .contact-icons a {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            color: #333;
+        }
+        .contact-icons a:hover {
+            color: #f37321;
+        }
+        .email-subscribe {
+            background-color: #f37321;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .email-subscribe input[type="email"] {
+            padding: 10px;
+            border-radius: 25px;
+            border: none;
+            width: 300px;
+            margin-right: 10px;
+        }
+        .email-subscribe button {
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: none;
+            background-color: #333;
+            color: white;
+        }
+        .email-subscribe button:hover {
+            background-color: #f37321;
+            color: #333;
+            border: 1px solid #333;
+        }
+      .btn-warning{
+    margin-left:38%;
+    line-height: 58px;
+        font-size: 16px;
+        border-radius: 40px;
+        display:inline-block;
+        background-color: #f37321;
+        width:200px;
+        color:#ffffff;
+        font-weight: 300px;
+      }
+      
+      .form-control-contact{
+        background-color: #FAF6F1;
+        border-radius: 10px;
+        border: 1px solid rgb(255, 255, 255);
+       width:100%;
+       height: 60px;
+       font-size: 14px;
+       padding-left: 10px;
+   
+
+      }
+      
+      .form-control-contact-textarea{
+        background-color: #FAF6F1;
+        border-radius: 10px;
+        border: 1px solid rgb(255, 255, 255);
+       width:100%;
+       height: 150px;
+       font-size: 14px;
+       padding-left: 10px;
+       padding-top: 10px;
+
+      }
+      /* css chỗ nhập email */
+      .subscribe-container {
+            background-color: #f4b63a;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 30px;
+            color: white;
+        }
+
+        .subscribe-container i {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .subscribe-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .subscribe-form input[type="email"] {
+            border: none;
+            padding: 10px;
+            background-color: #f4b63a;;
+            color:#ffffff;
+            width: 300px;
+            border-radius: 5px;
+            border:solid 1px #f4b63a;
+        }
+
+        .subscribe-form button {
+            background-color:#f4b63a;
+            border: none;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .subscribe-form button:hover {
+            background-color: #f8502a;
+        }
+        .subscribe-container{
+       margin-left: 10%;
+       margin-right : 10%;
+       position: relative;
+       top:-100px;
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <!-- Header -->
+
+            <!-- Contact Form and Information -->
+            <div class="row" class="form-contact">
+                <!-- Contact Form -->
+                <div class="col-md-12 mb-6">
+                    <div class="contact-header">
+                        <h2>Liên hệ với chuyên gia để được tư vấn</h2>
+                    </div>
+                    <div class="contact-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-4  ">
+
+                                    <input type="text"
+                                        class="form-control-contact"
+                                        id="name" placeholder="Nhập họ tên"
+                                        required>
+                                </div>
+                                <div class="col-md-6 mb-4  ">
+
+                                    <input type="email"
+                                        class="form-control-contact"
+                                        id="email"
+                                        placeholder="Nhập địa chỉ email"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-md-12  mb-4   ">
+
+                                <textarea class="form-control-contact-textarea"
+                                    id="message"
+                                    rows="4"
+                                    placeholder="Nhập nội dung"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="btn btn-warning w-30">Gửi thông
+                                tin</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+
+            </div>
+            <!-- <div class="row">
+                <div class="col-md-3 mb-4" class="contact-info-box">
+                    <h4 class="mb-3">Thông tin liên hệ</h4>
+                    <p>1073/23 Cách Mạng Tháng 8, P.7, Q. Tân Bình, TPHCM</p>
+                    <p>Điện thoại: (+84) 0313728397</p>
+                    <p>Email: info@themona.global</p>
+                    <p>Giờ làm việc: Thứ 2 - Thứ 6: 09:00 - 18:00</p>
+                    <div class="social-icons">
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i
+                                class="bi bi-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i
+                                class="bi bi-pinterest"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i
+                                class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Map with Address Overlay -->
+            <div class="map-container">
+                <!-- <div class="address-info">
+                    <h5>Địa chỉ của chúng tôi</h5>
+                    <p>1073/23 Cách Mạng Tháng 8, P.7, Q. Tân Bình, TPHCM</p>
+                    <p>Điện thoại: (+84) 0313728397</p>
+                </div> -->
+                <!-- Bản đồ Google -->
+                <iframe class="map-embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31347.553298010487!2d106.59103797910154!3d10.853782900000011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b6c59ba4c97%3A0x535e784068f1558b!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYw!5e0!3m2!1svi!2s!4v1727518173489!5m2!1svi!2s"
+                    frameborder="0" style="border:0;" allowfullscreen></iframe>
+
+                <!-- Thông tin liên hệ -->
+                <div class="contact-info-box">
+                    <h4>Thông tin liên hệ</h4>
+                    <p><i class="fas fa-location-dot"></i> 1073/23 Cách Mạng
+                        Tháng 8, P.7, Q. Tân Bình, TPHCM</p>
+                    <p><i class="fas fa-phone"></i> (+84) 0313728397</p>
+                    <p><i class="fas fa-clock"></i> Thứ 2 - Thứ 6: 09:00 -
+                        18:00</p>
+                    <p><i class="fas fa-envelope"></i> info@themona.global</p>
+                    <div class="contact-icons">
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i
+                                class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Phần đăng ký nhận email -->
+            <div class="subscribe-container">
+                <div class="col-md-12 mb-0.5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Đăng ký ngay để được nhận tin tức mới nhất.</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <form class="subscribe-form">
+                                <input type="email"
+                                    placeholder="Địa chỉ email..." required>
+                                <button type="submit"><i
+                                        class="fas fa-paper-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center">
+            <div class="container">
+                <p>&copy; 2024 Contact Page Example. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

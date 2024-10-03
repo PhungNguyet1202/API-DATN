@@ -1,0 +1,79 @@
+.product-details img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product-price {
+    color: red;
+    font-weight: bold;
+}
+
+.star-rating {
+    color: gold;
+}
+
+/* Ensure that both the image and details take up equal space and are centered */
+.product-details {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantity-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Adds space below the quantity section */
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-control input[type="number"] {
+    width: 60px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+/* Styling the "Thêm vào giỏ hàng" button */
+.add-to-cart-btn {
+    background-color: #ff3d00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px; /* Adds some space between quantity and button */
+    display: inline-block;
+    font-size: 16px;
+}
+
+.review-form {
+    margin-top: 20px;
+}
+
+.review-form input, .review-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.review-form button {
+    background-color: #ff3d00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Make sure the description takes up full width below the image and details */
+.product-description {
+    margin-top: 30px;
+}
+.product-details img {
+    max-width: 50%;  /* Giảm kích thước ảnh xuống 50% so với cột chứa */
+    border-radius: 10px;
+    margin-left: 20%;  /* Kéo ảnh vào bên trong từ cạnh trái */
+}
